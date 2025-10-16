@@ -65,64 +65,26 @@ namespace SudokuGenerator
         var board = new SudokuBoard ();
         int[] puzzle = new int[board.rows * board.cols];
         
-       /* puzzle = QQwing.generate_puzzle ((int) category);
-
-        for (var row = 0; row < board.rows; row++)
-            for (var col = 0; col < board.cols; col++)
-            {
-                var val = puzzle[(row * board.cols) + col];
-                if (val != 0)
-                    board.insert (row, col, val, true);
-            }
-        board.difficulty_category = category;  */
-        
-        //board.insert(1, 1, 9, true);
-        // 
-        
-        /*for (var row = 0; row < board.rows; row++)
-            for (var col = 0; col < board.cols; col++)
-            {
-                var val = 0;
-                if (row == 0 || row == 8 || col == 0 || col == 8){
-                    val = 1;    
-                } else {
-                    val = 9; 
-                }
-                
-                if (val != 0)
-                    board.insert (row, col, val, true);
-            } 
-             */
-            
-        int aaa[9];
-            aaa[0] = 1000111100;
-            aaa[1] = 1001111110;
-            aaa[2] = 1011100010;
-            aaa[3] = 1011100010;
-            aaa[4] = 1011111110;
-            aaa[5] = 1011111110;
-            aaa[6] = 1001111110;
-            aaa[7] = 1001100110;
-            aaa[8] = 1001100110;
+        int art[9];
+            art[0] = 1000111100;
+            art[1] = 1001111110;
+            art[2] = 1011100010;
+            art[3] = 1011100010;
+            art[4] = 1011111110;
+            art[5] = 1011111110;
+            art[6] = 1001111110;
+            art[7] = 1001100110;
+            art[8] = 1001100110;
             
         for (var row = 0; row < board.rows; row++)
             for (var col = 0; col < board.cols; col++)
             {
-                var val = aaa[row]%10;
-                aaa[row] = aaa[row]/10;
-                
-                
-                if (val != 0) {
-                    board.insert (row, col, val, true);
-                } else {
-                    board.insert (row, col, 0, true);
-                }
+                var val = art[row]%10;
+                art[row] = art[row]/10;
+                board.insert (row, col, val, true);
             }
-            
-        
             
         board.difficulty_category = category;
-        
 
         return board;
     }
